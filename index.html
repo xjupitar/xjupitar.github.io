@@ -19,23 +19,26 @@
             color: #444;
         }
         .section {
-            margin: 30px 0;
+            margin: 40px 0; /* Increased margin for better separation */
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .about-me {
             text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
         }
         .work-experience {
             text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
         }
         .work-experience p {
+            margin: 10px 0;
+        }
+        .work-experience img {
+            max-width: 200px; /* Consistent image size */
             margin: 10px 0;
         }
         .social-links a {
@@ -46,6 +49,16 @@
         }
         .social-links a:hover {
             color: #0056b3;
+        }
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .section {
+                margin: 20px 10px;
+                padding: 15px;
+            }
+            .work-experience img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -65,16 +78,15 @@
         <h2>Work Experience</h2>
         <h3>Community Manager</h3>
         <p><strong>RetroBridge (March 2025–Present):</strong> An advanced cross-chain bridging solution that simplifies asset transfers across various blockchain networks, including EVM and non-EVM chains where I’m helping drive engagement for a cutting-edge cross-chain bridging solution as well as supporting user's need.</p>
-        <img src="RetroBridge CM.png">
-
+        <img src="RetroBridge CM.png" alt="RetroBridge Community Manager Role">
         <p><strong>NuLink (Feb 2024–July 2024):</strong> A Web3-based ZK provable data privacy solution for decentralized applications (dApps) where I helped them boost community engagement, building trust, and driving the project's growth.</p>
-
+        <!-- Note: No image provided for NuLink; add <img> tag if needed -->
 
         <h3>Community Moderator</h3>
         <p><strong>Privasea AI (Feb 2024–Present):</strong> I'm working as a moderator here, helping to foster engaging discussions and support our mission to advance privacy-focused AI solutions. Excited to connect and contribute!</p>
-        <img src="Privasea moderator.png">
+        <img src="Privasea moderator.png" alt="Privasea AI Moderator Role">
         <p><strong>Citrea (Dec 2024–Present):</strong> I'm working as a moderator, helping to drive engaging discussions and support Citrea's mission. Citrea is Bitcoin’s first zero-knowledge rollup, enhancing Bitcoin’s blockspace with scalable, trustless solutions for DeFi, NFTs, and more, all while maintaining Bitcoin’s security and decentralization.</p>
-        <img src="Citrea Moderator.png">
+        <img src="Citrea Moderator.png" alt="Citrea Moderator Role">
         <p><strong>AGNT.HUB (Feb 2025–Present):</strong> I'm working as a moderator, helping to fuel discussions and support AGNT.Hub’s vision. AGNT.Hub is the first omnichain AI agent ecosystem, integrating AI and blockchain to enable users to create, deploy, and trade AI agents across networks like Solana and EVM-compatible chains. Powered by LayerZero, it offers seamless, no-code automation for DeFi, analytics, and more.</p>
         <p><strong>RetroBridge (March 2024–March 2025):</strong> An advanced cross-chain bridging solution that streamlines asset transfers across both EVM and non-EVM blockchains, where I contributed to maintaining a positive and engaged community by actively moderating discussions.</p>
         <p><strong>NuLink (Nov 2022–Feb 2024):</strong> I previously worked as a moderator, helping to cultivate discussions and support NuLink’s mission. NuLink is a decentralized, privacy-preserving platform leveraging Zero-Knowledge Proof, Proxy Re-Encryption, and Fully Homomorphic Encryption to enable secure data sharing and computation for Web3 applications.</p>
