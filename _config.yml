@@ -1,3 +1,11 @@
 title: My Portfolio
 description: Welcome to my portfolio, where I highlight my extensive expertise in blockchain technology and cryptocurrency innovation. I bring over seven years of dedicated experience in driving community engagement, managing decentralized projects, and advancing blockchain infrastructure. Explore my journey, from community leadership to running validators node.
 theme: jekyll-theme-minimal
+show_social: true
+twitter: aatambtc
+github: xjupitar
+social:
+  - name: Telegram
+    link: https://t.me/xJupitar
+  - name: Discord
+    link: https://discord.com/users/493451832593743873
