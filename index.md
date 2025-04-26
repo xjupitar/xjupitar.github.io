@@ -1,10 +1,10 @@
 # About Me
 
-Hi, I’m Tanjid Ahmed, widely known as xJupitar in the cryptocurrency space. Based in Dhaka, Bangladesh, I graduated from the University of Dhaka in 2018 and dove headfirst into the world of blockchain and cryptocurrencies. With over seven years of full-time experience, I’m passionate about driving community engagement and advancing decentralized technologies.
+Hi, I’m **Tanjid Ahmed**, widely known as **xJupitar** in the cryptocurrency space. Based in Dhaka, Bangladesh, I graduated from the University of Dhaka in 2018 and dove headfirst into the world of blockchain and cryptocurrencies. With over seven years of full-time experience, I’m passionate about driving community engagement and advancing decentralized technologies.
 
-I currently serve as a Community Manager at RetroBridge, where I foster vibrant communities, and as a Community Moderator for innovative projects like Citrea, Privasea, and AgntHub. Previously, I held roles as a Community Moderator at UnlockFi and NuLink, later advancing to Community Manager at NuLink, sharpening my skills in community building and project advocacy.
+I currently serve as a **Community Manager at RetroBridge**, where I foster vibrant communities, and as a **Community Moderator** for innovative projects like **Citrea, Privasea, and AgntHub**. Previously, I held roles as a Community Moderator at UnlockFi and NuLink, later advancing to Community Manager at NuLink, sharpening my skills in community building and project advocacy.
 
-Beyond community management, I have extensive technical expertise in blockchain infrastructure. I actively run validator nodes for Redbelly and Powerloom, and have previously operated nodes for leading networks including Sui Network, Celestia, Taiko, Opside, Ironfish, Massa, Q Blockchain, and Shardeum Network. My hands-on experience ensures robust and secure network operations.
+Beyond community management, I have extensive technical expertise in blockchain infrastructure. I actively run validator nodes for Redbelly and Powerloom, and have previously operated nodes for leading networks including **Sui Network, Celestia, Taiko, Opside, Ironfish, Massa, Q Blockchain, and Shardeum Network.** My hands-on experience ensures robust and secure network operations.
 
 Explore my journey in the crypto space and connect with me via my social channels to collaborate on the future of decentralized innovation!
 
