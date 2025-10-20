@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanjid Ahmed (xJupitar) - Blockchain & Web3 Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e4e4e7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #a1a1aa;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #e4e4e7;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .date {
+            color: #71717a;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .card p {
+            color: #a1a1aa;
+            line-height: 1.8;
+        }
+
+        .proof-image {
+            margin-top: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .proof-image:hover {
+            transform: scale(1.02);
+            border-color: rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .proof-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .proof-label {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            color: #667eea;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Modal for full-size images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: #667eea;
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.4);
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            color: #e4e4e7;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: #e4e4e7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #71717a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">xJupitar</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tanjid Ahmed</h1>
+            <p class="subtitle">xJupitar • Blockchain & Web3 Specialist</p>
+            <p>With 7+ years of experience in blockchain and crypto, I build communities, operate validator nodes, and help Web3 projects grow from the ground up. Currently driving community engagement at RetroBridge and moderating for cutting-edge projects like Citrea, Privasea, and AgntHub.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="card reveal">
+            <p>Hi, I'm Tanjid Ahmed — though most people in the crypto space know me as <strong>xJupitar</strong>. I'm based in Dhaka, Bangladesh, and since graduating from the University of Dhaka in 2018, I've been all-in on blockchain and crypto.</p>
+            <br>
+            <p>With 7+ years of experience, I've worked across some of the most exciting corners of Web3 — building communities, running validator nodes, and helping projects grow from the ground up. Right now, I'm the Community Manager at RetroBridge, and I also moderate for Citrea, Privasea, and AgntHub. In the past, I've worked with UnlockFi and NuLink, where I leveled up from moderator to manager and learned what it really takes to keep a community active and inspired.</p>
+            <br>
+            <p>On the technical side, I've operated validator nodes for networks like Redbelly and Powerloom, and previously for Sui, Celestia, Taiko, Opside, Ironfish, Massa, Q Blockchain, and Shardeum. That mix of community + infra work has given me a pretty unique perspective on both people and protocols.</p>
+            <br>
+            <p>I'm always excited to connect with fellow crypto enthusiasts and work on cool projects that are pushing the boundaries of what's possible with decentralized tech.</p>
+        </div>
+    </section>
+
+    <!-- Current Roles Section -->
+    <section id="experience">
+        <h2 class="section-title reveal">Current Roles</h2>
+        <div class="experience-grid">
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>RetroBridge</h3>
+                        <p class="role">Community Manager</p>
+                    </div>
+                    <span class="date">March 2025 – Present</span>
+                </div>
+                <p>Driving community engagement and user support for a cross-chain bridging solution connecting EVM and non-EVM networks.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/retrobridge-proof.jpg" alt="RetroBridge Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=RetroBridge+Proof+of+Work'">
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>Citrea</h3>
+                        <p class="role">Community Moderator</p>
+                    </div>
+                    <span class="date">Dec 2024 – Present</span>
+                </div>
+                <p>Moderating, driving community engagement, and managing support tickets for Bitcoin's first ZK rollup, helping scale Bitcoin's blockspace for DeFi, NFTs, and beyond.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/citrea-proof.jpg" alt="Citrea Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=Citrea+Proof+of+Work'">
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>AGNT.HUB</h3>
+                        <p class="role">Community Moderator</p>
+                    </div>
+                    <span class="date">Feb 2025 – Present</span>
+                </div>
+                <p>Moderating, fueling community discussions, and managing support tickets for the first omnichain AI agent ecosystem, enabling no-code automation across Solana, EVM chains, and beyond.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/agnthub-proof.jpg" alt="AGNT.HUB Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=AGNT.HUB+Proof+of+Work'">
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>Privasea AI</h3>
+                        <p class="role">Community Moderator</p>
+                    </div>
+                    <span class="date">Feb 2024 – Present</span>
+                </div>
+                <p>Moderating and fostering community discussions to support the growth of privacy-focused AI solutions.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/privasea-proof.jpg" alt="Privasea AI Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=Privasea+AI+Proof+of+Work'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Experience Section -->
+    <section>
+        <h2 class="section-title reveal">Past Experience</h2>
+        <div class="experience-grid">
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>RetroBridge</h3>
+                        <p class="role">Community Moderator</p>
+                    </div>
+                    <span class="date">Mar 2024 – Mar 2025</span>
+                </div>
+                <p>Contributed to maintaining a positive and engaged community by moderating discussions before being promoted to Community Manager.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/retrobridge-mod-proof.jpg" alt="RetroBridge Moderator Proof" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=RetroBridge+Moderator+Proof'">
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>UnLockFi</h3>
+                        <p class="role">Community Manager</p>
+                    </div>
+                    <span class="date">Feb 2024 – Nov 2024</span>
+                </div>
+                <p>Fostered community engagement, supported users in navigating the platform, and helped maintain a vibrant, inclusive environment for DeFi enthusiasts on a pioneering platform for multichain governance and liquid staking built on Maverick Protocol.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/unlockfi-proof.jpg" alt="UnLockFi Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=UnLockFi+Proof+of+Work'">
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>NuLink</h3>
+                        <p class="role">Community Manager</p>
+                    </div>
+                    <span class="date">Feb 2024 – July 2024</span>
+                </div>
+                <p>Helped boost community engagement, building trust, and driving growth for a Web3-based ZK provable data privacy solution for decentralized applications.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/nulink-manager-proof.jpg" alt="NuLink Manager Proof" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=NuLink+Manager+Proof'">
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-header">
+                    <div>
+                        <h3>NuLink</h3>
+                        <p class="role">Community Moderator</p>
+                    </div>
+                    <span class="date">Nov 2022 – Feb 2024</span>
+                </div>
+                <p>Helped cultivate discussions, manage support, and advance NuLink's mission as a decentralized, privacy-preserving platform leveraging Zero-Knowledge Proof, Proxy Re-Encryption, and Fully Homomorphic Encryption.</p>
+                <span class="proof-label">📎 Proof of Work</span>
+                <div class="proof-image" onclick="openModal(this)">
+                    <img src="images/nulink-mod-proof.jpg" alt="NuLink Moderator Proof" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=NuLink+Moderator+Proof'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title reveal">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-icon">🌐</div>
+                <h3>Community Management</h3>
+                <p>Building and nurturing engaged Web3 communities</p>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🔗</div>
+                <h3>Blockchain Infrastructure</h3>
+                <p>Validator node operations across multiple networks</p>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">💬</div>
+                <h3>Community Moderation</h3>
+                <p>Maintaining healthy, productive community environments</p>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🚀</div>
+                <h3>Project Growth</h3>
+                <p>Driving user adoption and project expansion</p>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🤝</div>
+                <h3>User Support</h3>
+                <p>Providing expert guidance and troubleshooting</p>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">📊</div>
+                <h3>Web3 Strategy</h3>
+                <p>Community-driven growth and engagement strategies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <div class="card reveal" style="text-align: center;">
+            <p style="margin-bottom: 2rem;">I'm always excited to connect with fellow crypto enthusiasts and work on cool projects that are pushing the boundaries of what's possible with decentralized tech. Feel free to reach out!</p>
+            <div class="social-links">
+                <a href="https://twitter.com/xjupitar" target="_blank" class="social-link" title="Twitter">𝕏</a>
+                <a href="https://t.me/xjupitar" target="_blank" class="social-link" title="Telegram">✈️</a>
+                <a href="https://github.com/xjupitar" target="_blank" class="social-link" title="GitHub">💻</a>
+                <a href="https://discord.com/users/xjupitar" target="_blank" class="social-link" title="Discord">💬</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tanjid Ahmed (xJupitar). All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Built with passion for the decentralized future 🚀</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+    </script>
+</body>
+</html>
