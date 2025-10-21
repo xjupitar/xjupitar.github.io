@@ -108,6 +108,42 @@
             text-align: center;
         }
 
+        /* Profile Picture Styles */
+        .profile-picture-container {
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .profile-picture-wrapper {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            padding: 4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6), 0 0 30px rgba(118, 75, 162, 0.4);
+            }
+        }
+
+        .profile-picture {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0a0a0f;
+            display: block;
+        }
+
         .hero h1 {
             font-size: 4rem;
             font-weight: 800;
@@ -116,14 +152,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 0.8s ease;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero .subtitle {
             font-size: 1.5rem;
             color: #a1a1aa;
             margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.2s both;
+            animation: fadeInUp 0.8s ease 0.4s both;
         }
 
         .hero p {
@@ -131,7 +167,7 @@
             color: #a1a1aa;
             max-width: 800px;
             margin: 0 auto 3rem;
-            animation: fadeInUp 0.8s ease 0.4s both;
+            animation: fadeInUp 0.8s ease 0.6s both;
         }
 
         @keyframes fadeInUp {
@@ -149,7 +185,7 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
-            animation: fadeInUp 0.8s ease 0.6s both;
+            animation: fadeInUp 0.8s ease 0.8s both;
         }
 
         .btn {
@@ -416,6 +452,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .profile-picture-wrapper {
+                width: 150px;
+                height: 150px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -478,6 +519,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <!-- Profile Picture -->
+            <div class="profile-picture-container">
+                <div class="profile-picture-wrapper">
+                    <img src="images/wallpaper.png" alt="Tanjid Ahmed (xJupitar)" class="profile-picture" onerror="this.src='https://via.placeholder.com/180/667eea/ffffff?text=xJupitar'">
+                </div>
+            </div>
+            
             <h1>Tanjid Ahmed</h1>
             <p class="subtitle">xJupitar • Blockchain & Web3 Specialist</p>
             <p>With 7+ years of experience in blockchain and crypto, I build communities, operate validator nodes, and help Web3 projects grow from the ground up. Currently driving community engagement at RetroBridge and moderating for cutting-edge projects like Citrea, Privasea, and AgntHub.</p>
