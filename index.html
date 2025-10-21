@@ -19,7 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -47,7 +46,6 @@
             50% { opacity: 0.5; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -94,7 +92,6 @@
             color: #667eea;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -181,7 +178,6 @@
             transform: translateY(-3px);
         }
 
-        /* Section Styles */
         section {
             max-width: 1200px;
             margin: 0 auto;
@@ -199,7 +195,6 @@
             background-clip: text;
         }
 
-        /* Experience Cards */
         .experience-grid {
             display: grid;
             gap: 2rem;
@@ -253,27 +248,6 @@
             line-height: 1.8;
         }
 
-        .proof-image {
-            margin-top: 1.5rem;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .proof-image:hover {
-            transform: scale(1.02);
-            border-color: rgba(102, 126, 234, 0.4);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .proof-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
         .proof-label {
             display: inline-block;
             margin-top: 1rem;
@@ -284,9 +258,62 @@
             color: #667eea;
             font-size: 0.85rem;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
         }
 
-        /* Modal for full-size images */
+        .proof-label:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .proof-label::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .proof-label.active::after {
+            transform: rotate(180deg);
+        }
+
+        .proof-image {
+            margin-top: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .proof-image.show {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .proof-image:hover {
+            border-color: rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .proof-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .proof-image:hover img {
+            transform: scale(1.02);
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -345,7 +372,6 @@
             }
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -383,7 +409,6 @@
             font-size: 0.9rem;
         }
 
-        /* Social Links */
         .social-links {
             display: flex;
             gap: 1rem;
@@ -403,7 +428,6 @@
             color: #e4e4e7;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.5rem;
         }
 
         .social-link:hover {
@@ -412,7 +436,12 @@
             transform: translateY(-3px);
         }
 
-        /* Footer */
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
         footer {
             text-align: center;
             padding: 3rem 2rem;
@@ -420,7 +449,6 @@
             color: #71717a;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -446,7 +474,6 @@
             }
         }
 
-        /* Scroll reveal */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -462,7 +489,6 @@
 <body>
     <div class="bg-animation"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">xJupitar</div>
@@ -475,7 +501,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Tanjid Ahmed</h1>
@@ -488,7 +513,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2 class="section-title reveal">About Me</h2>
         <div class="card reveal">
@@ -502,7 +526,6 @@
         </div>
     </section>
 
-    <!-- Current Roles Section -->
     <section id="experience">
         <h2 class="section-title reveal">Current Roles</h2>
         <div class="experience-grid">
@@ -514,8 +537,8 @@
                     </div>
                     <span class="date">March 2025 – Present</span>
                 </div>
-                <p>                <p>Community Moderator (Mar 2024 - Mar 2025), promoted to Community Manager at RetroBridge, a cross-chain bridging solution connecting EVM and non-EVM networks. Drove community engagement and provided user support across multiple blockchain ecosystems.</p></p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <p>Community Moderator (Mar 2024 - Mar 2025), promoted to Community Manager at RetroBridge, a cross-chain bridging solution connecting EVM and non-EVM networks. Drove community engagement and provided user support across multiple blockchain ecosystems.</p>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
                     <img src="images/retrobridge-proof.png" alt="RetroBridge Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=RetroBridge+Proof+of+Work'">
                 </div>
@@ -530,7 +553,7 @@
                     <span class="date">Dec 2024 – Present</span>
                 </div>
                 <p>Moderating, driving community engagement, and managing support tickets for Bitcoin's first ZK rollup, helping scale Bitcoin's blockspace for DeFi, NFTs, and beyond.</p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
                     <img src="images/citrea-proof.png" alt="Citrea Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=Citrea+Proof+of+Work'">
                 </div>
@@ -545,7 +568,7 @@
                     <span class="date">Feb 2024 – Present</span>
                 </div>
                 <p>Moderating and fostering community discussions to support the growth of privacy-focused AI solutions.</p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
                     <img src="images/privasea-proof.png" alt="Privasea AI Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=Privasea+AI+Proof+of+Work'">
                 </div>
@@ -560,13 +583,13 @@
                     <span class="date">Feb 2025 – Present</span>
                 </div>
                 <p>Moderating, fueling community discussions, and managing support tickets for the first omnichain AI agent ecosystem, enabling no-code automation across Solana, EVM chains, and beyond.</p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
                     <img src="images/agnthub-proof.png" alt="AGNT.HUB Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=AGNT.HUB+Proof+of+Work'">
                 </div>
             </div>
 
-                        <div class="card reveal">
+            <div class="card reveal">
                 <div class="card-header">
                     <div>
                         <h3>Tanari</h3>
@@ -575,18 +598,18 @@
                     <span class="date">Oct 2025 – Present</span>
                 </div>
                 <p>Moderating, Driving community engagement, and managing support channels for the first self-owned Bitcoin financial platform, empowering users with passkey-based security, social recovery, and seamless access to BTC finance without compromising self-custody.</p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
-                    <img src="images/tanari-proof.png" alt="Privasea AI Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=Tanari+Proof+of+Work'">
+                    <img src="images/tanari-proof.png" alt="Tanari Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=Tanari+Proof+of+Work'">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Past Experience Section -->
     <section>
         <h2 class="section-title reveal">Past Experience</h2>
-        <div class="card reveal">
+        <div class="experience-grid">
+            <div class="card reveal">
                 <div class="card-header">
                     <div>
                         <h3>UnLockFi</h3>
@@ -595,7 +618,7 @@
                     <span class="date">Feb 2024 – Nov 2024</span>
                 </div>
                 <p>Fostered community engagement, supported users in navigating the platform, and helped maintain a vibrant, inclusive environment for DeFi enthusiasts on a pioneering platform for multichain governance and liquid staking built on Maverick Protocol.</p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
                     <img src="images/unlockfi-proof.png" alt="UnLockFi Proof of Work" onerror="this.src='https://via.placeholder.com/800x400/764ba2/ffffff?text=UnLockFi+Proof+of+Work'">
                 </div>
@@ -610,7 +633,7 @@
                     <span class="date">Nov 2022 – July 2024</span>
                 </div>
                 <p>Community Moderator (Nov 2022 - Feb 2024), promoted to Community Manager (Feb 2024 - Jul 2024) at NuLink, a decentralized privacy platform utilizing Zero-Knowledge Proof, Proxy Re-Encryption, and Fully Homomorphic Encryption. Drove community engagement and growth while building trust in the project's privacy-preserving mission.</p>
-                <span class="proof-label">📎 Proof of Work</span>
+                <span class="proof-label" onclick="toggleProof(this)">📎 Proof of Work</span>
                 <div class="proof-image" onclick="openModal(this)">
                     <img src="images/nulink-proof.png" alt="NuLink Proof" onerror="this.src='https://via.placeholder.com/800x400/667eea/ffffff?text=NuLink+Proof'">
                 </div>
@@ -618,7 +641,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <h2 class="section-title reveal">Skills & Expertise</h2>
         <div class="skills-grid">
@@ -655,54 +677,21 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title reveal">Let's Connect</h2>
         <div class="card reveal" style="text-align: center;">
             <p style="margin-bottom: 2rem;">I'm always excited to connect with fellow crypto enthusiasts and work on cool projects that are pushing the boundaries of what's possible with decentralized tech. Feel free to reach out!</p>
             <div class="social-links">
-                <a href="https://twitter.com/aatambtc" target="_blank" class="social-link" title="Twitter">𝕏</a>
-                <a href="https://t.me/xjupitar" target="_blank" class="social-link" title="Telegram">➤</a>
-                <a href="https://github.com/xjupitar" target="_blank" class="social-link" title="GitHub">💻</a>
-                <a href="https://discord.com/users/xjupitar" target="_blank" class="social-link" title="Discord">💬</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Tanjid Ahmed (xJupitar). All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">Built with passion for the decentralized future 🚀</p>
-    </footer>
-
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Scroll reveal animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
-    </script>
-</body>
-</html>
+                <a href="https://twitter.com/aatambtc" target="_blank" class="social-link" title="Twitter/X">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/xjupitar" target="_blank" class="social-link" title="Telegram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/xjupitar" target="_blank" class="social-link" title="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404
