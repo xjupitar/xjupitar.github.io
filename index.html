@@ -552,12 +552,28 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .testimonial-card-label {
-            padding: 0.75rem 1rem;
-            font-size: 0.8rem;
-            color: #a1a1aa;
+        .testimonial-card-footer {
+            padding: 0.85rem 1rem;
             text-align: center;
+        }
+
+        .testimonial-card-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e4e4e7;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-card-role {
+            font-size: 0.75rem;
+            color: #667eea;
             letter-spacing: 0.03em;
+        }
+
+        .testimonial-card-pending {
+            font-size: 0.8rem;
+            color: #52525b;
+            font-style: italic;
         }
 
         /* Scroll reveal */
@@ -761,73 +777,84 @@
     <section id="testimonials" class="testimonials-section">
         <h2 class="section-title reveal">Testimonials</h2>
         <div class="testimonials-track-wrapper">
-            <div class="testimonials-track" id="testimonialsTrack">
-                <!-- Slot 1 -->
+            <div class="testimonials-track">
+                <!-- Slot 1 — Davyd Koriahin, RetroBridge -->
                 <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-1.png')">
-                    <img src="images/testimonial-1.png" alt="Testimonial 1"
-                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial+1'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                    <img src="images/testimonial-1.png" alt="Testimonial from Davyd Koriahin"
+                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-name">Davyd Koriahin</p>
+                        <p class="testimonial-card-role">Founder, RetroBridge</p>
+                    </div>
                 </div>
-                <!-- Slot 2 -->
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-2.png')">
+                <!-- Slot 2 — Pending -->
+                <div class="testimonial-card">
                     <img src="images/testimonial-2.png" alt="Testimonial 2"
-                         onerror="this.src='https://via.placeholder.com/280x180/764ba2/ffffff?text=Testimonial+2'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
-                <!-- Slot 3 -->
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-3.png')">
+                <!-- Slot 3 — Pending -->
+                <div class="testimonial-card">
                     <img src="images/testimonial-3.png" alt="Testimonial 3"
-                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial+3'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
-                <!-- Slot 4 -->
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-4.png')">
+                <!-- Slot 4 — Pending -->
+                <div class="testimonial-card">
                     <img src="images/testimonial-4.png" alt="Testimonial 4"
-                         onerror="this.src='https://via.placeholder.com/280x180/764ba2/ffffff?text=Testimonial+4'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
-                <!-- Slot 5 -->
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-5.png')">
+                <!-- Slot 5 — Pending -->
+                <div class="testimonial-card">
                     <img src="images/testimonial-5.png" alt="Testimonial 5"
-                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial+5'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
-                </div>
-                <!-- Slot 6 -->
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-6.png')">
-                    <img src="images/testimonial-6.png" alt="Testimonial 6"
-                         onerror="this.src='https://via.placeholder.com/280x180/764ba2/ffffff?text=Testimonial+6'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
                 <!-- Duplicates for seamless infinite loop -->
                 <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-1.png')">
-                    <img src="images/testimonial-1.png" alt="Testimonial 1"
-                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial+1'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                    <img src="images/testimonial-1.png" alt="Testimonial from Davyd Koriahin"
+                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-name">Davyd Koriahin</p>
+                        <p class="testimonial-card-role">Founder, RetroBridge</p>
+                    </div>
                 </div>
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-2.png')">
+                <div class="testimonial-card">
                     <img src="images/testimonial-2.png" alt="Testimonial 2"
-                         onerror="this.src='https://via.placeholder.com/280x180/764ba2/ffffff?text=Testimonial+2'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-3.png')">
+                <div class="testimonial-card">
                     <img src="images/testimonial-3.png" alt="Testimonial 3"
-                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial+3'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-4.png')">
+                <div class="testimonial-card">
                     <img src="images/testimonial-4.png" alt="Testimonial 4"
-                         onerror="this.src='https://via.placeholder.com/280x180/764ba2/ffffff?text=Testimonial+4'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-5.png')">
+                <div class="testimonial-card">
                     <img src="images/testimonial-5.png" alt="Testimonial 5"
-                         onerror="this.src='https://via.placeholder.com/280x180/667eea/ffffff?text=Testimonial+5'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
-                </div>
-                <div class="testimonial-card" onclick="openModalWithImage('images/testimonial-6.png')">
-                    <img src="images/testimonial-6.png" alt="Testimonial 6"
-                         onerror="this.src='https://via.placeholder.com/280x180/764ba2/ffffff?text=Testimonial+6'">
-                    <p class="testimonial-card-label">Click to enlarge</p>
+                         onerror="this.src='https://via.placeholder.com/280x180/1a1a2e/52525b?text=Coming+Soon'">
+                    <div class="testimonial-card-footer">
+                        <p class="testimonial-card-pending">Coming soon...</p>
+                    </div>
                 </div>
             </div>
         </div>
